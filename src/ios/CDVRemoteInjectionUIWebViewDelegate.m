@@ -14,7 +14,7 @@
 - (void)webViewDidStartLoad:(UIWebView*)webView
 {
     [self.webViewDelegate onWebViewDidStartLoad];
-    
+
     if ([self.wrappedDelegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
         [self.wrappedDelegate webViewDidStartLoad:webView];
     }
@@ -23,7 +23,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self.webViewDelegate onWebViewDidFinishLoad:webView];
-    
+
     if ([self.wrappedDelegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
         [self.wrappedDelegate webViewDidFinishLoad:webView];
     }
@@ -34,7 +34,7 @@
     if ([self.wrappedDelegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
         [self.wrappedDelegate webView:webView didFailLoadWithError:error];
     }
-    
+
     [self.webViewDelegate onWebViewFailLoadWithError:error];
 }
 @end
@@ -68,10 +68,10 @@
 {
     // Cancel the slow request timer.
     [self cancelRequestTimer];
- 
+
     // Inject cordova into the page.
     NSString *scheme = webView.request.URL.scheme;
- 
+
     if ([self isSupportedURLScheme:scheme]){
         [webView stringByEvaluatingJavaScriptFromString:[self buildInjectionJS]];
     }
@@ -80,6 +80,15 @@
 // Handles notifications from the webview delegate whenever a page load fails.
 - (void) onWebViewFailLoadWithError:(NSError *)error
 {
+
+
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
+             message:@"onWebViewFailLoadWithError"
+             delegate:nil
+             cancelButtonTitle:@"OK"
+            otherButtonTitles:nil];
+            [alert show];
+
     [self loadPageFailure:error];
 }
 
@@ -92,7 +101,7 @@
 - (void) retryCurrentRequest
 {
     UIWebView *webView = [self.plugin findWebView];
-    
+
     [webView stopLoading];
     [webView reload];
 }

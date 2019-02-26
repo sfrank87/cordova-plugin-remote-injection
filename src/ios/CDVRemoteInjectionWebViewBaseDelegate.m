@@ -223,7 +223,7 @@
         //[self displayRetryPromptWithMessage:@"Unable to contact the site." withCancelText:@"Close" retryable:NO];
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
-                                                            message:@"Dee dee doo doo."
+                                                            message:@"loadPageFailure"
                                                             delegate:nil
                                                             cancelButtonTitle:@"OK"
                                                             otherButtonTitles:nil];
