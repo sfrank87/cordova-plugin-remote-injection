@@ -224,13 +224,13 @@
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
                                                             message:@"Dee dee doo doo."
-                                                            delegate:self 
+                                                            delegate:self
                                                             cancelButtonTitle:@"OK"
                                                             otherButtonTitles:nil];
         [alert show];
 
             // If you're not using ARC, you will need to release the alert view.
-            [alert release];
+            //[alert release];
 
 
     }
