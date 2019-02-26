@@ -34,7 +34,7 @@
 {
 
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
-     message:@"didFailProvisionalNavigation"
+     message:@"3 didFailProvisionalNavigation"
      delegate:nil
      cancelButtonTitle:@"OK"
     otherButtonTitles:nil];
@@ -111,7 +111,7 @@
 - (void) onWebViewDidFailNavigation:(NSError *)error
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
-     message:@"onWebViewDidFailNavigation"
+     message:@"!! onWebViewDidFailNavigation" + error.code
      delegate:nil
      cancelButtonTitle:@"OK"
     otherButtonTitles:nil];
