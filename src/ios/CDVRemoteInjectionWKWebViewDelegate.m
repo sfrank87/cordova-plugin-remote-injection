@@ -32,6 +32,14 @@
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error;
 {
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
+     message:@"didFailProvisionalNavigation"
+     delegate:nil
+     cancelButtonTitle:@"OK"
+    otherButtonTitles:nil];
+    [alert show];
+
     [self.webViewDelegate onWebViewDidFailNavigation:error];
 
     if ([self.wrappedDelegate respondsToSelector:@selector(webView:didFailProvisionalNavigation:withError:)]) {
@@ -41,6 +49,14 @@
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error;
 {
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
+     message:@"didFailNavigation"
+     delegate:nil
+     cancelButtonTitle:@"OK"
+    otherButtonTitles:nil];
+    [alert show];
+
     [self.webViewDelegate onWebViewDidFailNavigation:error];
 
     if ([self.wrappedDelegate respondsToSelector:@selector(webView:didFailNavigation:withError:)]) {
