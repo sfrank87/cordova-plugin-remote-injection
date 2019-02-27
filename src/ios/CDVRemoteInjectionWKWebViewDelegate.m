@@ -114,7 +114,7 @@
 
     //NSString *inStr = [@(error.code) stringValue];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
-     message:@error.localizedDescription
+     message:error.localizedDescription
      delegate:nil
      cancelButtonTitle:@"OK"
     otherButtonTitles:nil];
