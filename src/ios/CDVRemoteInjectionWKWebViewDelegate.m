@@ -110,8 +110,9 @@
 
 - (void) onWebViewDidFailNavigation:(NSError *)error
 {
+    NSString *inStr = [NSString stringWithFormat:@"%d", [error.code intValue]];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
-     message:error.code
+     message:inStr
      delegate:nil
      cancelButtonTitle:@"OK"
     otherButtonTitles:nil];
