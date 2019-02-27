@@ -111,7 +111,7 @@
 - (void) onWebViewDidFailNavigation:(NSError *)error
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
-     message:@"!! onWebViewDidFailNavigation" + error.code
+     message:error.code
      delegate:nil
      cancelButtonTitle:@"OK"
     otherButtonTitles:nil];
