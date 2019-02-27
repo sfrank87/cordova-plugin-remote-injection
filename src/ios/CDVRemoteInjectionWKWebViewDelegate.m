@@ -110,17 +110,16 @@
 
 - (void) onWebViewDidFailNavigation:(NSError *)error
 {
-    NSAlert *theAlert = [NSAlert alertWithError:error];
-    [theAlert runModal]; // Ignore return value.
-    /*
-    NSString *inStr = [@(error.code) stringValue];
+
+
+    //NSString *inStr = [@(error.code) stringValue];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
-     message:inStr
+     message:@error.localizedDescription
      delegate:nil
      cancelButtonTitle:@"OK"
     otherButtonTitles:nil];
     [alert show];
-    */
+
     [self loadPageFailure:error];
 }
 
