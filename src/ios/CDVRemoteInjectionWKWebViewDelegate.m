@@ -110,7 +110,7 @@
 
 - (void) onWebViewDidFailNavigation:(NSError *)error
 {
-    NSString *inStr = [NSString stringWithFormat:@"%d", [error.code intValue]];
+    NSString *inStr = [@(error.code) stringValue];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ROFL"
      message:inStr
      delegate:nil
